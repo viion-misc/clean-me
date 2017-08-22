@@ -7,13 +7,8 @@
         public $lastName;
         public $suffix;
 
-        function savePerson(){
-            $db = new mysqli('127.0.0.1', 'root', 'test', 'testing', 8889);
-            $db->query('INSERT INTO users (first_name, second_name) VALUES (\''.$this->firstName.'\', \''.$this->lastName.'\')');
-        }
-
         function get_person_by_last_name(){
-                $db = new mysqli('127.0.0.1', 'root', 'test', 'testing', 8889);
+                $db = new mysqli('127.0.0.1', 'root', 'password', 'cleanme');
                 $res = $db->query('SELECT * FROM users WHERE second_name = \''.$this->lastName.'\'');
 
                 while ($x = $res->fetch_assoc()){
@@ -24,7 +19,7 @@
         function getUsers(){
 
 
-            $db = new mysqli('127.0.0.1', 'root', 'test', 'testing', 8889);
+            $db = new mysqli('127.0.0.1', 'root', 'password', 'cleanme');
             $res = $db->query('SELECT * FROM users');
 
             echo '<table>';
@@ -59,7 +54,7 @@
     echo($user->lastName);
 
     $user->savePerson();
-    $user->get_person_by_last_ name();
+    $user->get_person_by_last_name();
     $user->getUsers();
 
     $data = @$user->GetProperties(true);
