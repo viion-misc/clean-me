@@ -14,7 +14,7 @@ $userA->setFirstName('Peter')->setLastName('Johnson');
 
 // build user B
 $userB = new \CleanMe\Entity\User();
-$userB->setFirstName('Fred')->setLastName('Flimstone');
+$userB->setFirstName('Fred')->setLastName('Flintstone');
 
 // create users
 $userService->create($userA);
